@@ -1,0 +1,11 @@
+### App Request
+
+GET http://localhost:3000/
+
+### All Message Request
+
+GET http://localhost:3000/messages
+
+### Selected Message Request
+
+GET http://localhost:3000/messages/14528
