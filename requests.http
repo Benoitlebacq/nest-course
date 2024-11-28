@@ -16,7 +16,16 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-"userName": "bidule457",
-"userPassword" : "guçihiojdap74496hzdpo_ayhè-çà_èuà",
-"userId" : "427guvjhker"
+"userName": "Gerard",
+"userPassword" : "123123",
+"userId" : "4608àhdp"
+}
+
+### auth login
+GET http://localhost:3000/auth/login 
+Content-Type: application/json
+
+{
+    "userName" : "Gerard",
+    "userPassword" : ""
 }
