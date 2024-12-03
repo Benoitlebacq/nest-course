@@ -9,7 +9,7 @@ export class MessagesService {
         return `tous les messages`
     }
 
-    async getMessage(id: string): Promise<string> {
+    async getMessage(id: number): Promise<string> {
         // logique métier qui va recuperer le message avec l'id 'id' en BDD
         return `message avec l'id: ${id}`
     }

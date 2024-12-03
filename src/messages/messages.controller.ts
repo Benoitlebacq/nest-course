@@ -1,7 +1,7 @@
 
 import { MessagesDto } from "src/models/Messages.models";
 
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, ParseIntPipe, Post } from "@nestjs/common";
 
 import { MessagesService } from "./messages.service";
 
@@ -16,7 +16,7 @@ export class MessagesController {
     }
 
     @Get(":id")
-    async getMessage(@Param('id') id: any) {
+    async getMessage(@Param('id', ParseIntPipe) id: number) {
         const data = await this.messagesService.getMessage(id);
         return data
     }

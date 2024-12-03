@@ -7,25 +7,36 @@ GET http://localhost:3000/
 GET http://localhost:3000/messages
 
 ### Selected Message Request
-
 GET http://localhost:3000/messages/14528
 
-### post user
+### get all users
+GET http://localhost:3000/users
 
+### get user
+GET http://localhost:3000/users/Benoit
+
+### post user
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-"userName": "Gerard",
-"userPassword" : "123123",
-"userId" : "4608àhdp"
+"userName": "ours",
+"userPassword" : "789789",
+"userId" : "yuopjkpo^pll"
 }
 
 ### auth login
-GET http://localhost:3000/auth/login 
+POST http://localhost:3000/auth/login 
 Content-Type: application/json
 
 {
-    "userName" : "Gerard",
-    "userPassword" : ""
+    "userName" : "Benoit",
+    "userPassword" : "123123"
 }
+ throw new Error('une erreur blablabla')
+### Auth Get Profile
+GET http://localhost:3000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ODk3ODkiLCJpYXQiOjE3MzMxMzc0NzEsImV4cCI6MTczNDQzMzQ3MX0.W8hW8ZTYuldqIWEkhyBY1MnJC1y3EzYNKABUlRATp2s
+
+### JEAN MICHEL
+GET  http://localhost:3000/jeanmichel

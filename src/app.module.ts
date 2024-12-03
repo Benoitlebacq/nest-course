@@ -7,6 +7,7 @@ import { AppService } from "./app.service";
 import { MessagesModule } from "./messages/messages.module";
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { JeanmichelModule } from './jeanmichel/jeanmichel.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     MessagesModule,
     UsersModule,
-    AuthModule
+    AuthModule,
+    JeanmichelModule
   ],
   controllers: [AppController],
   providers: [AppService],
