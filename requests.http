@@ -2,12 +2,6 @@
 
 GET http://localhost:3000/
 
-### All Message Request
-
-GET http://localhost:3000/messages
-
-### Selected Message Request
-GET http://localhost:3000/messages/14528
 
 ### get all users
 GET http://localhost:3000/users
@@ -20,10 +14,13 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-"userName": "ours",
-"userPassword" : "789789",
-"userId" : "yuopjkpo^pll"
+  "userName": "782rr732",
+  "userPassword": "789z789",
+  "email": "mymail@gmail.com",
+  "role": "user",
+  "userId": "123a"
 }
+
 
 ### auth login
 POST http://localhost:3000/auth/login 

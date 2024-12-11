@@ -1,15 +1,17 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { Body, Controller, Get, Param, Post, UseInterceptors } from "@nestjs/common";
 
 import { User } from "./user.entity";
-import { UsersInterceptor } from "./users.interceptor";
 import { UsersService } from "./users.service";
+import { UsersPasswordInterceptor } from "./usersPassword.interceptor";
 
 @Controller('users')
 export class UsersController {
     constructor(private readonly usersService: UsersService) { }
 
     @Get()
-    @UseInterceptors(UsersInterceptor)
+    @UseInterceptors(UsersPasswordInterceptor)
     async getUsers() {
         console.log('JE SUIS DANS LE CONTROLLEUR')
         const data = await this.usersService.getUsers();
@@ -23,7 +25,10 @@ export class UsersController {
 
     @Post()
     async createUser(@Body() user: User) {
+        user.userId = uuidv4();
         return await this.usersService.createUser(user)
     }
 
 }
+
+

@@ -1,7 +1,7 @@
-import { UsersInterceptor } from './users.interceptor';
+import { UsersPasswordInterceptor } from "./usersPassword.interceptor";
 
 describe('UsersInterceptor', () => {
   it('should be defined', () => {
-    expect(new UsersInterceptor()).toBeDefined();
+    expect(new UsersPasswordInterceptor()).toBeDefined();
   });
 });

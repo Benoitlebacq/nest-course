@@ -1,7 +1,7 @@
 import { hash } from "bcrypt";
 import { Repository } from "typeorm";
 
-import { Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 
 import { User } from "./user.entity";
@@ -27,6 +27,8 @@ export class UsersService {
             await this.userRepository.save({ ...user, userPassword: userHashedPassword }) // Insère un utilisateur avec un mot de passe crypté
             return `l'utilisateur ${user.userName} a été créé`
         } catch (error) {
+            console.log('error.code :::::', error.code)
+            if (error.code == 'ER_DUP_ENTRY') throw new BadRequestException('Cet email est déjà utilisé.');
             throw new Error("Impossible de créer l'utlisateur")
         }
     }
